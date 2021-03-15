@@ -39,7 +39,7 @@ setup(
             "sphinx-autodoc-typehints",
             "sphinx-copybutton",
         ],
-        "dev": ["versioneer"],
+        "dev": ["versioneer", "prospector"],
     },
     entry_points={
         "console_scripts": [

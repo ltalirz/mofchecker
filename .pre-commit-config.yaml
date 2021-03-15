@@ -34,6 +34,18 @@ repos:
         language: python
         types: [text]
 
+  - repo: https://github.com/ambv/black
+    rev: 20.8b1
+    hooks:
+    - id: black
+      exclude: versioneer.py|mofchecker/_version.py|^docs/
+
+  - repo: https://github.com/PyCQA/isort
+    rev: 5.7.0
+    hooks:
+    - id: isort
+      exclude: versioneer.py|mofchecker/_version.py|^docs/
+
   # - repo: https://github.com/pre-commit/mirrors-mypy
   #   rev: "" # Use the sha / tag you want to point at
   #   hooks:
@@ -42,20 +54,6 @@ repos:
 
   - repo: local
     hooks:
-      - id: black
-        language_version: python3
-        name: black
-        exclude: versioneer.py|mofchecker/_version.py|^docs/
-        entry: black
-        language: system
-        types: [python]
-
-      - id: isort
-        name: isort
-        language: system
-        exclude: versioneer.py|mofchecker/_version.py|^docs/
-        types: [python]
-        entry: isort
 
       - id: prospector
         language: system
